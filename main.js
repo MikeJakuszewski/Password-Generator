@@ -4,18 +4,16 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 document.querySelector('button').addEventListener('click', generatePassword)
 let passwordBoxOne = document.getElementById('password-box-one')
 let passwordBoxTwo = document.getElementById('password-box-two')
-let passwordOne = ''
-let passwordTwo = ''
 
 
-//we use a for loop to call the passwordCharacter functions to create a two random passwords. We then use those passwords to be printed in the DOM. At the beginning of generatePassword, we clear the contents to zero.
+//we use a for loop to call the randomChar functions to create a two random passwords. We then use those passwords to be printed in the DOM. At the beginning of generatePassword, we clear the contents to zero.
 
 function generatePassword(){
     passwordOne = ''
     passwordTwo = ''
     for(let i = 0;i<10;i++){
-        passwordOneCharacters()
-        passwordTwoCharacters()
+        passwordOne += randomChar()
+        passwordTwo += randomChar()
     }
     // console.log(password)
     passwordBoxOne.textContent = passwordOne
@@ -25,17 +23,11 @@ function generatePassword(){
 
 //this generates the random number and then a random character
 
-function passwordOneCharacters(){ 
+function randomChar(){ 
     let randomNum = Math.floor(Math.random()* characters.length)
-    passwordOne += characters[randomNum]
-
+    return characters[randomNum]
 }
 
-function passwordTwoCharacters(){ 
-    let randomNum = Math.floor(Math.random()* characters.length)
-    passwordTwo += characters[randomNum]
-
-}
 
 //To do
 // Add parameters to the function that will allow us to generate a password with a certain number of characters
