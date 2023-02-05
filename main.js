@@ -6,7 +6,7 @@ let passwordBoxOne = document.getElementById('password-box-one')
 let passwordBoxTwo = document.getElementById('password-box-two')
 
 
-//we use a for loop to call the randomChar functions to create a two random passwords. We then use those passwords to be printed in the DOM. At the beginning of generatePassword, we clear the contents to zero.
+//we use a for loop to call the randomChar function. This will concatonate our returned characters to create a two random passwords. We then use those passwords held in a variable. At the beginning of generatePassword, we clear the contents to zero.
 
 function generatePassword(){
     passwordOne = ''
@@ -15,7 +15,7 @@ function generatePassword(){
         passwordOne += randomChar()
         passwordTwo += randomChar()
     }
-    // console.log(password)
+
     passwordBoxOne.textContent = passwordOne
     passwordBoxTwo.textContent = passwordTwo
 }
